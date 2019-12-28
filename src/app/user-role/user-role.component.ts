@@ -27,6 +27,7 @@ export class UserRoleComponent implements OnInit {
     // this.popdiv = false; // 所有角色的div是否显示
   }
   getUserRole(): void {
+    console.log(this.userRoles);
     this.userRoleService.getUserRole().subscribe(res =>  {this.userRoles = res,
       this.userRole = this.userRoles[0];
     });
@@ -52,7 +53,7 @@ export class UserRoleComponent implements OnInit {
       }
     }
     // @ts-ignore
-    this.simUR = {userId: this.userRole.user.actor.id, roleIds: arr};
+    this.simUR = {userId: this.userRole.user.id, roleIds: arr};
     console.log(this.simUR);
     this.userRoleService.updateUserRole(this.simUR).subscribe(res => {
           alert(res.message); // 弹出后台给的消息
@@ -80,6 +81,5 @@ export class UserRoleComponent implements OnInit {
       .filter(':contains(\'' + ($('#filterName').val()) + '\')')
       .show();
     $('#doNotHide').show();
-    // alert('好了');
   }
 }

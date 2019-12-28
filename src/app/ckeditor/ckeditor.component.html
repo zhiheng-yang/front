@@ -1,1 +1,8 @@
-<p>ckeditor works!</p>
+<div>
+  <ckeditor [(ngModel)]="mycontent" #myckeditor [config]="ckeConfig" debounce="500" (change)="onChange($event)">
+  </ckeditor>
+</div>
+<!--<div [innerHTML]="mycontent"></div>-->
+<button (click)="toBox()">发送</button>
+<!--<iframe src='assets/showCharts.html' frameborder="0" height=800px width=700px></iframe>-->
+

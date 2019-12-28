@@ -17,6 +17,8 @@ import { StudentMenuComponent } from './student-menu/student-menu.component';
 import {UserRoleComponent} from './user-role/user-role.component';
 import { RoleMenuComponent } from './role-menu/role-menu.component';
 import { CkeditorComponent } from './ckeditor/ckeditor.component';
+import {CKEditorModule} from 'ng2-ckeditor';
+import { ChartsComponent } from './charts/charts.component';
 
 declare var require: any;
 
@@ -38,6 +40,7 @@ declare var $: any;
     UserRoleComponent,
     RoleMenuComponent,
     CkeditorComponent,
+    ChartsComponent,
   ],
   imports: [ // 当前项目依赖的所有模块
     BrowserModule,
@@ -46,6 +49,7 @@ declare var $: any;
     // 如果要引入双向绑定，则需要引入FormModule
     FormsModule,
     ReactiveFormsModule,
+    CKEditorModule
   ],
   // 定义服务
   providers: [{

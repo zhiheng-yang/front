@@ -137,3 +137,10 @@ export class SimplifiedMenuAllocation {
   menuIds: number[];
 }
 
+export class Mailbox {
+  id: number;
+  sender: string ;
+  mailContent: string;
+}
+
+

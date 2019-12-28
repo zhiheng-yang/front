@@ -1,0 +1,15 @@
+<a routerLink="addCourse"><button> 添加题目</button></a>
+课程名:<input #name placeholder="搜索.." />  <a><button (click)="ifName(name.value)"> 搜索</button></a>
+<table class="tablelist">
+  <tr><th>课程号</th><th>课程名</th><th>学分</th><th>学时</th><th>考试周</th><th>开课学院</th><th>课程类型</th><th>操作</th></tr>
+  <tr *ngFor="let course of courses" class="badge">
+    <td>{{course.courseNo}}</td>
+    <td>{{course.name}}</td>
+    <td>{{course.credit}}&nbsp;学分</td>
+    <td>{{course.classHour}}&nbsp;时</td>
+    <td>第&nbsp;{{course.examWeek}}&nbsp;周</td>
+    <td>{{course.college.description}}</td>
+    <td>{{course.courseType.description}}</td>
+    <td> <a routerLink="updateCourse/{{course.id}}"><button>修改</button></a><button class="aaa" (click)="delete(course)">删除</button></td>
+  </tr>
+</table>

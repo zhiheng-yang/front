@@ -1,0 +1,11 @@
+<header>
+  <h1>教务管理系统</h1>
+</header>
+<nav>
+  <div>&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;户：{{name}}</div>
+  <div *ngFor="let menusRole of dynamicMenus">
+    <a>{{menusRole.role.description}}</a>
+    <a routerLink="{{menu.url}}" *ngFor="let menu of menusRole.menus">&nbsp;&nbsp;&nbsp;&nbsp;{{menu.description}}</a>
+  </div>
+  </nav>
+<section><router-outlet></router-outlet></section>

@@ -40,7 +40,6 @@ a button:hover{
   background-color: seashell; /* Green */
   color: gray;
 }
-
 .aaa{
   border-radius:30px;
   padding: 10px;
@@ -83,7 +82,7 @@ th  {
   left: .1em;
 }
 .tablelist td {
-  }
+}
 
 .tablelist a {
   color: #039be5;

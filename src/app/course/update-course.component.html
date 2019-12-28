@@ -1,0 +1,21 @@
+<script src="../app.module.ts"></script>
+<div>
+  <h2>修改课程</h2>
+  <span>所选课题信息：</span><br>
+  <label>课&nbsp;程&nbsp;&nbsp;&nbsp;号：</label><input [(ngModel)]="course.courseNo" /><br>
+  <label>课程名称：</label><input [(ngModel)]="course.name" /><br>
+  <label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：</label><input [(ngModel)]="course.credit" /><br>
+  <label>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：</label><input [(ngModel)]="course.remarks" /><br>
+  <label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时：</label><input [(ngModel)]="course.classHour" /><br>
+  <label>考&nbsp;试&nbsp;&nbsp;&nbsp;周：</label><input [(ngModel)]="course.examWeek" /><br>
+  <label>课程类型：</label>
+  <select [(ngModel)]="course.courseType" [compareWith]="compareFn">
+    <option *ngFor="let courseType of courseTypes" [ngValue]="courseType">{{courseType.description}}</option>
+  </select> <br>
+  <label>所属学院：</label>
+  <select [(ngModel)]="course.college" [compareWith]="compareFn">
+    <option *ngFor="let college of colleges" [ngValue]="college" >{{college.description}}</option>
+  </select> <br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>

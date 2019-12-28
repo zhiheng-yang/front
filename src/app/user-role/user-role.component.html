@@ -1,0 +1,64 @@
+<!--<a routerLink="/index/addUser"><button > 添加用户</button></a>-->
+<p> <br> 筛选： <input id="filterName" name="filterName">
+  <span (click)="filter()" class="search">搜索</span> <br> </p>
+
+<table class="tablelist">
+  <tr id="doNotHide"><th>序 号</th><th>用户名</th><th>姓名</th><th>操作</th></tr>
+  <tr *ngFor="let u of userRoles" class="badge">
+    <td>{{u.id}}</td>
+    <td>{{u.user.username}}</td>
+    <td>{{u.user.actor.name}}</td>
+    <td>
+      <a routerLink="/index/updateUser/{{u.id}}"><button>修改用户</button></a>
+      <button (click)="delete(u)">删除用户</button>
+      <a (click)="updateUserRole(u)"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">分配角色</button></a>
+    </td>
+  </tr>
+</table>
+<!--<div id="popdiv" [hidden]="!popdiv">-->
+<!--  <span *ngFor="let item of userRole.roleAllocationStatusSet; let key = index;">-->
+<!--      <input type="checkbox" [value]="key" [checked]="item.allocated" name="userrole" (click)="changeCheck($event.target.checked, key)"/>-->
+<!--      <label>{{item.role.description}}</label><br></span>-->
+<!--  <button (click)="saveUserRole()">保存</button><button (click)="hidediv()">取消</button>-->
+<!--</div>-->
+<!-- 模态框（Modal） -->
+
+<div class="bootstrap-iso">
+  <div id="addModal" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            权限分配
+          </h4>
+        </div>
+        <div class="modal-body">
+
+         <span *ngFor="let item of userRole.roleAllocationStatusSet; let key = index;">
+        <input type="checkbox" [value]="key" [checked]="item.allocated" name="userrole" (click)="changeCheck($event.target.checked, key)"/>
+        <label>{{item.role.description}}</label><br></span>
+  <!--        <button (click)="saveUserRole()" type="button" class="btn btn-default" data-dismiss="modal">保存</button>-->
+  <!--        <button (click)="hidediv()" type="button" class="btn btn-primary">取消</button>-->
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="saveUserRole()" type="button" class="btn btn-default" data-dismiss="modal">保存
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            取消
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+</div>
+<!--<script>-->
+<!--    //实现可以被拖拽的功能-->
+<!--    $(function() {-->
+<!--        alert("nmsl");-->
+<!--        $( "#addModal" ).draggable();-->
+<!--    });-->
+<!--</script>-->

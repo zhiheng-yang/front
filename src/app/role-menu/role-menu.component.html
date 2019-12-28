@@ -1,0 +1,51 @@
+<!--<a routerLink="/index/addUser"><button > 添加用户</button></a>-->
+<table class="tablelist">
+  <tr><th>序 号</th><th>权限</th><th>操作</th></tr>
+  <tr *ngFor="let u of roleMenus" class="badge">
+    <td>{{u.id}}</td>
+    <td>{{u.role.description}}</td>
+<!--    <td>{{u.user.actor.name}}</td>-->
+    <td>
+      <a routerLink="/index/updateUser/{{u.id}}"><button>修改用户</button></a>
+      <button (click)="delete(u)">删除权限</button>
+      <a (click)="updateUserRole(u)"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">分配角色</button></a>
+    </td>
+  </tr>
+</table>
+
+
+<div class="bootstrap-iso">
+  <div id="addModal" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            权限分配
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div>
+<!--               <span *ngFor="let item12 of roleMenu; let key = index;"></span>-->
+                 <span *ngFor="let item of roleMenu.menuAllocationStatusSet; let key = index;">
+                  <input type="checkbox" [value]="key" [checked]="item.allocated" name="rolemenu" (click)="changeCheck($event.target.checked, key)"/>
+                  <label>{{item.menu.description}}</label><br>
+                 </span>
+
+                <!--        <button (click)="saveUserRole()" type="button" class="btn btn-default" data-dismiss="modal">保存</button>-->
+                <!--        <button (click)="hidediv()" type="button" class="btn btn-primary">取消</button>-->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="saveUserRole()" type="button" class="btn btn-default" data-dismiss="modal">保存
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            取消
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+</div>

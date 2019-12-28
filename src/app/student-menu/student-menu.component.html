@@ -1,0 +1,14 @@
+<!--课程名:<input #name placeholder="搜索.." />  <a><button (click)="ifName(name.value)"> 搜索</button></a>-->
+<table class="tablelist">
+  <tr><th>学号</th><th>姓名</th><th>身份证号</th><th>所属学院</th></tr>
+  <tr *ngFor="let student of students" class="badge">
+    <td>{{student.studentNo}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.iDCard}}</td>
+    <td>{{student.department.name}}&nbsp;</td>
+<!--    <td>第&nbsp;{{course.examWeek}}&nbsp;周</td>-->
+<!--    <td>{{course.college.description}}</td>-->
+<!--    <td>{{course.courseType.description}}</td>-->
+<!--    <td> <a routerLink="updateCourse/{{course.id}}"><button>修改</button></a><button class="aaa" (click)="delete(course)">删除</button></td>-->
+  </tr>
+</table>

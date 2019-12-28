@@ -1,3 +1,9 @@
+#popdiv{width:300px;
+  position: absolute; top:180px; left:100px;
+  background-color: #eeeeff;
+  border:2px solid #DDDDDD; line-height: 30px;
+}
+
 body{
   padding: 0;
   margin: 0;
@@ -40,7 +46,6 @@ a button:hover{
   background-color: seashell; /* Green */
   color: gray;
 }
-
 .aaa{
   border-radius:30px;
   padding: 10px;
@@ -83,7 +88,7 @@ th  {
   left: .1em;
 }
 .tablelist td {
-  }
+}
 
 .tablelist a {
   color: #039be5;

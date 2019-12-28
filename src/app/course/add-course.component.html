@@ -1,0 +1,18 @@
+  <h2 >添加新课程</h2>
+  <span>请输入以下信息：</span><br>
+  <label>课&nbsp;&nbsp;程&nbsp;&nbsp;&nbsp;号：</label><input #courseNo /><br>
+  <label>课程&nbsp; 名&nbsp;称：</label><input #name /><br>
+  <label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：</label><input #credit /><br>
+  <label>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：</label><input #remarks /><br>
+  <label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时：</label><input #classHour /><br>
+  <label>考&nbsp;试&nbsp;&nbsp;&nbsp;周：</label><input #examWeek /><br>
+  <label>课程类型：</label>
+  <select [(ngModel)]="courseType">
+    <option *ngFor="let courseType of courseTypes" [ngValue]="courseType">{{courseType.description}}</option>
+  </select> <br>
+  <label>所属学院：</label>
+  <select [(ngModel)]="college">
+    <option *ngFor="let college of colleges" [ngValue]="college" >{{college.description}}</option>
+  </select> <br>
+<button (click)="goBack()" >返回</button>
+<button (click)="save(courseNo.value,name.value,credit.value,remarks.value,classHour.value,examWeek.value,this.courseType,this.college)">保存</button>

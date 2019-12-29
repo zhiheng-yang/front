@@ -1,6 +1,9 @@
+<p> <br> 筛选： <input id="filterName" name="filterName"  >
+  <span (click)="filter()" class="search"><span>搜索</span></span> <br> </p>
+
 <!--<a routerLink="/index/addUser"><button > 添加用户</button></a>-->
 <table class="tablelist">
-  <tr><th>序 号</th><th>权限</th><th>操作</th></tr>
+  <tr id="doNotHide"><th>序 号</th><th>权限</th><th>操作</th></tr>
   <tr *ngFor="let u of roleMenus" class="badge">
     <td>{{u.id}}</td>
     <td>{{u.role.description}}</td>

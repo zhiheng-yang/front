@@ -19,6 +19,7 @@ import { RoleMenuComponent } from './role-menu/role-menu.component';
 import { CkeditorComponent } from './ckeditor/ckeditor.component';
 import {CKEditorModule} from 'ng2-ckeditor';
 import { ChartsComponent } from './charts/charts.component';
+import { HeadmasterMailboxComponent } from './headmaster-mailbox/headmaster-mailbox.component';
 
 declare var require: any;
 
@@ -41,6 +42,7 @@ declare var $: any;
     RoleMenuComponent,
     CkeditorComponent,
     ChartsComponent,
+    HeadmasterMailboxComponent,
   ],
   imports: [ // 当前项目依赖的所有模块
     BrowserModule,

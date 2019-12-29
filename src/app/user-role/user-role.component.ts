@@ -49,7 +49,8 @@ export class UserRoleComponent implements OnInit {
       // tslint:disable-next-line:no-unused-expression
       if (this.userRole.roleAllocationStatusSet[i].allocated === true) {
         // alert(this.userRole.roleAllocationStatusSet[i].id);
-        arr.push(this.userRole.roleAllocationStatusSet[i].id);
+        arr.push(this.userRole.roleAllocationStatusSet[i].role.id);
+        console.log(this.userRole.roleAllocationStatusSet[i].role.id);
       }
     }
     // @ts-ignore

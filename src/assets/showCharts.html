@@ -7,6 +7,9 @@
   <style>
     div{
       position: absolute;
+      background-color: #ebccd1;
+      border-color: #d9534f;
+      /*border: 1px;*/
     }
   </style>
 </head>
@@ -24,6 +27,7 @@
             success: function (data) {
                 var ob = eval("("+data+")");//string->json,方便遍历
                 for (var i in ob){
+                    console.log(ob[i])
                     if (parseInt(ob[i]['iDCard'].charAt(16))%2 == 0){
                         // console.log(parseInt(ob[i]['iDCard']));
                         // alert("1")
@@ -43,7 +47,8 @@
         var chart = {
             plotBackgroundColor: null,
             plotBorderWidth: null,
-            plotShadow: false
+            plotShadow: false,
+            backgroundColor: 'rgba(0,0,0,0)'
         };
         var title = {
             text: '宇宙大学校内性别比例饼图'
@@ -95,7 +100,8 @@
       var chart = {
           plotBackgroundColor: null,
           plotBorderWidth: 0,
-          plotShadow: false
+          plotShadow: false,
+          backgroundColor: 'rgba(0,0,0,0)'
       };
       var title = {
           text: 'Browser<br>shares',

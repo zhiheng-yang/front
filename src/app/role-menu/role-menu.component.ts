@@ -41,21 +41,23 @@ export class RoleMenuComponent implements OnInit {
   // 改变复选框的勾选
   changeCheck(value: boolean, key: number) {
     this.roleMenu.menuAllocationStatusSet[key].allocated = value;
+    console.log(this.roleMenu);
   }
   saveUserRole() {
     const arr = new Array(0);
     // 配置用户拥有的角色
+    console.log(this.roleMenu.menuAllocationStatusSet);
     // tslint:disable-next-line:forin
     for (const i in this.roleMenu.menuAllocationStatusSet) {
       // tslint:disable-next-line:no-unused-expression
       if (this.roleMenu.menuAllocationStatusSet[i].allocated === true) {
         // alert(this.userRole.roleAllocationStatusSet[i].id);
-        arr.push(this.roleMenu.menuAllocationStatusSet[i].id);
+        arr.push(this.roleMenu.menuAllocationStatusSet[i].menu.id);
       }
     }
     // @ts-ignore
     this.simRM = {roleId: this.roleMenu.role.id, menuIds: arr};
-    console.log(this.simRM);
+    alert(this.simRM.menuIds.toString());
     this.roleMenuService.updateRoleMenu(this.simRM).subscribe(res => {
       alert(res.message); // 弹出后台给的消息
     });
@@ -76,5 +78,11 @@ export class RoleMenuComponent implements OnInit {
     // @ts-ignore
     // $('#myModal').draggable();
   }
-
+  filter(): void {
+    // console.log($('#filterName').val());
+    $('table tr').hide()
+      .filter(':contains(\'' + ($('#filterName').val()) + '\')')
+      .show();
+    $('#doNotHide').show();
+  }
 }

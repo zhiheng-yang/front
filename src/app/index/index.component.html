@@ -5,7 +5,7 @@
 <nav>
   <div>&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;户：{{name}}</div>
   <div *ngFor="let menusRole of dynamicMenus">
-    <a>{{menusRole.role.description}}</a>
+    <a><strong>{{menusRole.role.description}}</strong></a>
     <a routerLink="{{menu.url}}" *ngFor="let menu of menusRole.menus">&nbsp;&nbsp;&nbsp;&nbsp;{{menu.description}}</a>
   </div>
   </nav>

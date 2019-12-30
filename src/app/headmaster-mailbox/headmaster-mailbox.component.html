@@ -1,4 +1,8 @@
-<table width=1000px border=1px style="background-color: #fffa90">
+<p> <br> 筛选： <input id="filterName" name="filterName"  >
+  <span (click)="filter()" class="search"><span>搜索</span></span> <br> </p>
+<table class="tablelist" style="background-color: #f0ad4e ;table-layout: fixed;
+    word-wrap: break-word;" border=2px>
+  <tr style="width: 50px" id="doNotHide"><td width=100px><strong>发件人</strong></td><td><strong>信封内容</strong></td></tr>
   <tr *ngFor="let u of mails">
     <td [innerHTML]="u.sender"></td>
     <td [innerHTML]="u.mailContent"></td>

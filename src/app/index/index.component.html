@@ -8,5 +8,7 @@
     <a><strong>{{menusRole.role.description}}</strong></a>
     <a routerLink="{{menu.url}}" *ngFor="let menu of menusRole.menus">&nbsp;&nbsp;&nbsp;&nbsp;{{menu.description}}</a>
   </div>
-  </nav>
+  <a routerLink="/logout"><strong>退出登录>></strong></a>
+
+</nav>
 <section><router-outlet></router-outlet></section>

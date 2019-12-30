@@ -27,10 +27,8 @@
             success: function (data) {
                 var ob = eval("("+data+")");//string->json,方便遍历
                 for (var i in ob){
-                    console.log(ob[i])
+                    console.log(ob[i]);
                     if (parseInt(ob[i]['iDCard'].charAt(16))%2 == 0){
-                        // console.log(parseInt(ob[i]['iDCard']));
-                        // alert("1")
                         counterW ++
                     }else counterM ++
                 }
@@ -104,7 +102,7 @@
           backgroundColor: 'rgba(0,0,0,0)'
       };
       var title = {
-          text: 'Browser<br>shares',
+          text: '在校人员<br>出生年份统计',
           align: 'center',
           verticalAlign: 'middle',
           y: 50
@@ -130,21 +128,28 @@
       };
       var series= [{
           type: 'pie',
-          name: 'Browser share',
+          name: '出生年份统计',
           innerSize: '50%',
           data: [
-              ['Firefox',   45.0],
-              ['IE',       26.8],
-              ['Chrome', 12.8],
-              ['Safari',    8.5],
-              ['Opera',     6.2],
-              {
-                  name: 'Others',
-                  y: 0.7,
-                  dataLabels: {
-                      enabled: false
-                  }
-              }
+              ['一月',   5.0],
+              ['二月',       11.8],
+              ['三月', 12.8],
+              ['四月',    8.5],
+              ['五月',     6.2],
+              ['六月',   4.0],
+              ['七月',       10.8],
+              ['八月', 12.8],
+              ['九月',    8.5],
+              ['十月',     6.2],
+              ['十一月',    8.5],
+              ['十二月',     6.2],
+              // {
+              //     name: 'Others',
+              //     y: 0.7,
+              //     dataLabels: {
+              //         enabled: false
+              //     }
+              // }
           ]
       }];
 

@@ -72,7 +72,7 @@ a button:hover{
   border-bottom:1px;
   color: black;
   border-radius:3px;
-  background: #d58512;
+  background: #f4511e;
   text-align: center;
 }
 td  {
@@ -107,11 +107,11 @@ th  {
   color:#607D8B;
 }
 .tablelist button {
-  background-color: #d58512 !important;
+  background-color: #f4511e !important;
   color: white;
   border: none;
   padding: 5px 5px;
-  border-radius:30px;
+  border-radius:10px;
   margin-right:10px;
   cursor:hand;
 }

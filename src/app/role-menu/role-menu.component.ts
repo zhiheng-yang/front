@@ -11,19 +11,11 @@ declare var $: any;
 export class RoleMenuComponent implements OnInit {
 
   private roleMenus: any[];
-  // private popdiv: boolean;
   private roleMenu: any;
   private simRM: SimplifiedMenuAllocation;
-  // roleIds: number[];
   constructor(private roleMenuService: UserRoleMenuService) { }
   ngOnInit() {
-    // @ts-ignore
-    // tslint:disable-next-line:only-arrow-functions
-    // $(function() {
-    //   // @ts-ignore
-    //   $( '#addModal' ).draggable();
-    // });
-    console.log(this.roleMenuService.getUserRole());
+    // console.log(this.roleMenuService.getUserRole());
     this.getUserRole();
     // this.popdiv = false; // 所有角色的div是否显示
   }
@@ -47,7 +39,7 @@ export class RoleMenuComponent implements OnInit {
     const arr = new Array(0);
     // 配置用户拥有的角色
     console.log(this.roleMenu.menuAllocationStatusSet);
-    // tslint:disable-next-line:forin
+    // tslint:disable-next-line:for in
     for (const i in this.roleMenu.menuAllocationStatusSet) {
       // tslint:disable-next-line:no-unused-expression
       if (this.roleMenu.menuAllocationStatusSet[i].allocated === true) {
@@ -57,16 +49,12 @@ export class RoleMenuComponent implements OnInit {
     }
     // @ts-ignore
     this.simRM = {roleId: this.roleMenu.role.id, menuIds: arr};
-    alert(this.simRM.menuIds.toString());
+    // alert(this.simRM.menuIds.toString());
     this.roleMenuService.updateRoleMenu(this.simRM).subscribe(res => {
       alert(res.message); // 弹出后台给的消息
     });
   }
-  // hidediv() {
-  //   this.popdiv = false;
-  //   // @ts-ignore
-  //
-  // }
+
   delete(user: any): void {
     this.roleMenus = this.roleMenus.filter(h => h !== user);
     // this.userroleService.deleteUser(user).subscribe(res =>{

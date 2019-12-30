@@ -24,8 +24,14 @@ export class HeadmasterMailboxComponent implements OnInit {
     });
   }
 
-  change() {
-    // $('sp').html('<blockquote> <p style="text-align: justify;">把你想说的话写给校长</p> </blockquote>');
+  // change() {
+  //   // $('sp').html('<blockquote> <p style="text-align: justify;">把你想说的话写给校长</p> </blockquote>');
+  // }
+  filter(): void {
+    // console.log($('#filterName').val());
+    $('table tr').hide()
+      .filter(':contains(\'' + ($('#filterName').val()) + '\')')
+      .show();
+    $('#doNotHide').show();
   }
-
 }

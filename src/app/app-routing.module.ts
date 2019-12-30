@@ -11,6 +11,7 @@ import {RoleMenuComponent} from './role-menu/role-menu.component';
 import {CkeditorComponent} from './ckeditor/ckeditor.component';
 import {ChartsComponent} from './charts/charts.component';
 import {HeadmasterMailboxComponent} from './headmaster-mailbox/headmaster-mailbox.component';
+import {LogoutComponent} from './login/logout.component';
 const routes: Routes = [
   {path: '', component: LoginComponent, pathMatch: 'full'},
   // {path: 'logout', component: LogoutComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
       {path: 'roleMenu', component: RoleMenuComponent},
       {path: 'ckeditor', component: CkeditorComponent},
       {path: 'charts', component: ChartsComponent},
-      {path: 'headmastmailbox', component: HeadmasterMailboxComponent}
+      {path: 'headmastmailbox', component: HeadmasterMailboxComponent},
+      {path: 'logout', component: LogoutComponent}
     ]},
 ];
 @NgModule({

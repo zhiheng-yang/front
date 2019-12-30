@@ -16,5 +16,4 @@ export class LogoutComponent implements OnInit {
   logout() {
     this.universityService.logOut().subscribe(res => alert(res.message));
   }
-
 }

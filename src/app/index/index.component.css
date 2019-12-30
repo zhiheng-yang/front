@@ -35,15 +35,15 @@ nav a {
   text-decoration: none;
   margin: 10px;
   display: block;
-  background-color: #eee;
+  background-color: #e7eeaa;
   border-radius: 4px;
 }
 nav a:visited, a:link {
   color: #334953;
 }
 nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+  color: #d4e5bf;
+  background-color: #dc4e5d;
 }
 nav a.active {
   color: #039be5;

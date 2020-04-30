@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.12",
     "angular2-highcharts": "^0.5.5",
     "highcharts": "^8.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-ckeditor": "^1.2.6",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

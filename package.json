@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.12",
     "@angular/router": "~8.2.12",
     "angular2-highcharts": "^0.5.5",
-    "highcharts": "^8.0.0",
+    "highcharts": "^9.0.0",
     "jquery": "^3.4.1",
     "ng2-ckeditor": "^1.2.6",
     "rxjs": "~6.4.0",
